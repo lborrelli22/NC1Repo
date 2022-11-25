@@ -28,7 +28,7 @@ struct MailboxScreen: View {
         MailboxElement(name: "Sent", image: "paperplane", color: .blue, mboxName: "fed.idserve.net"),
         MailboxElement(name: "Junk", image: "xmark.bin", color: .blue, mboxName: "fed.idserve.net"),
         MailboxElement(name: "Bin", image: "trash", color: .blue, mboxName: "fed.idserve.net")
-        ]
+    ]
     
         
     var body: some View {
