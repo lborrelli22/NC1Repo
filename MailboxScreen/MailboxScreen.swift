@@ -33,10 +33,10 @@ struct MailboxScreen: View {
         
     var body: some View {
         
-        NavigationView {
+        NavigationStack {     // "NavigationView" is deprecated
             
-            List(mailboxElements) { myMailbox in
-                NavigationLink( destination: Destination(myChildViewMailbox: myMailbox), label: { Label(temps: myMailbox) } )
+            List(mailboxElements) { element in
+                NavigationLink( destination: Destination(myChildView: element), label: { Label(element: element) } )
                 
             }
             .navigationTitle("Mailboxes")
@@ -59,15 +59,15 @@ struct MailboxScreen: View {
 
 struct Label: View {
     
-    var temps: MailboxElement
+    var element: MailboxElement
     
     var body: some View {
         HStack {
             
-            Image(systemName: temps.image).foregroundColor(temps.color)
-            Text(temps.name)
+            Image(systemName: element.image).foregroundColor(element.color)
+            Text(element.name)
             Spacer()
-            Text(temps.mboxName).font(.subheadline).foregroundColor(.gray).padding(.trailing, 8.0)
+            Text(element.mboxName).font(.subheadline).foregroundColor(.gray).padding(.trailing, 8.0)
             
         }
     }
@@ -76,7 +76,7 @@ struct Label: View {
 ///
 
 struct Destination: View {
-    let myChildViewMailbox: MailboxElement
+    let myChildView: MailboxElement
     var body: some View {
         VStack { }
     }
