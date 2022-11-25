@@ -57,15 +57,6 @@ struct MailboxScreen: View {
 
 ///
 
-struct Destination: View {
-    let myChildViewMailbox: MailboxElement
-    var body: some View {
-        VStack { }
-    }
-}
-
-///
-
 struct Label: View {
     
     var temps: MailboxElement
@@ -79,6 +70,15 @@ struct Label: View {
             Text(temps.mboxName).font(.subheadline).foregroundColor(.gray).padding(.trailing, 8.0)
             
         }
+    }
+}
+
+///
+
+struct Destination: View {
+    let myChildViewMailbox: MailboxElement
+    var body: some View {
+        VStack { }
     }
 }
 
